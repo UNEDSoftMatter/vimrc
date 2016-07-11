@@ -1,6 +1,10 @@
 CHANGELOG FILE
 ==============
 
+11th Jul 2016
+-------------
+- Added gnuplot syntax highlighting (valid for .gp extension)
+
 3rd May 2016
 ------------
 - Added header for .lmp files

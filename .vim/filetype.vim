@@ -5,5 +5,6 @@ endif
 
 augroup filetypedetect
  au! BufRead,BufNewFile *.lmp setfiletype lammps
+ au! BufRead,BufNewFile *.gp  setfiletype gnuplot
 augroup END
 

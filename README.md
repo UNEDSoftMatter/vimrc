@@ -15,6 +15,8 @@ Required external plugins
    and configured with vim-addons install latex-suite
 - Uses colorized color scheme (should be installed with xterm support)
    http://ethanschoonover.com/solarized
+- Uses gnuplot.vim : Syntax highlighting for Gnuplot 
+   http://www.vim.org/scripts/script.php?script_id=1737
 
 
 Personalized commands
