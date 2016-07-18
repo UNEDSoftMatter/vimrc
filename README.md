@@ -38,3 +38,5 @@ Some useful tips built-in vim
             a block or the full text.
 
 `*`: Find the next occurence of the word in which the cursor is.
+
+`:hardcopy`: Print using lpr.
