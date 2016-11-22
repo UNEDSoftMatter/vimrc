@@ -29,7 +29,7 @@ Personalized commands
 - `:hi0` Deactivate highlight of the current line 
 - `cc`   Comment a block (Visual mode)
 - `dcc`  Decomment a block (Visual mode)
-
+- `C-P`  Open an xfce4-terminal with a markdown preview
 
 Some useful tips built-in vim
 -----------------------------

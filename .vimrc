@@ -35,11 +35,15 @@
 " Last update:  3rd May 2016
 "      Added header for .lmp files
 "      Added (de)comment for .lmp files
+" Last update: 22nd Nov 2016
+"      Added (de)comment for .py files
+"      Added support for Markdown files (HT https://github.com/JamshedVesuna/vim-markdown-preview)
+"      :w write a temporary html file (needs markdown)
+"      <C-P> open a lynx terminal with the file
 "
 " Author:     Jaime Arturo de la Torre
 " Contact:    jatorre@fisfun.uned.es
-" LastUpdate: 15th Apr 2016
-" Deploy:     $ tar xvfzp vimrc_DATE.tgz ~/ 
+" LastUpdate: 22nd Nov 2016
 "
 " 
 
@@ -59,9 +63,9 @@ try
 catch
 endtry
 
-" Comment and decomment lines in BASH/GNUPLOT
-au BufNewFile,BufRead *.{sh,gp,lmp} :vmap cc :s/^/# <CR>
-au BufNewFile,BufRead *.{sh,gp,lmp} :vmap dcc :s/^# /<CR>
+" Comment and decomment lines in BASH/GNUPLOT/PYTHON
+au BufNewFile,BufRead *.{sh,gp,lmp,py} :vmap cc :s/^/# <CR>
+au BufNewFile,BufRead *.{sh,gp,lmp,py} :vmap dcc :s/^# /<CR>
 
 " Comment and decomment lines in FORTRAN 90
 au BufNewFile,BufRead *.f90 :vmap cc :s/^/! <CR>
@@ -135,3 +139,13 @@ set cursorline
 hi CursorLineNr cterm=NONE ctermbg=0 ctermfg=3
 map :hi0 :hi CursorLine cterm=NONE ctermbg=0 ctermfg=none<CR>
 map :hi1 :hi CursorLine cterm=NONE ctermbg=0 ctermfg=blue<CR>
+
+" Create a html file for Markdown files
+" NOTE: Requires markdown (apt-get install markdown)
+" BUG:  It requires to write twice in order to work
+au BufWritePre *.{md} call system('markdown "' . expand('%:p') . '" > /tmp/vim-markdown-preview.html')
+  
+" Open a lynx browser for Markdown files
+" NOTE: Uses xfce4-terminal
+au Filetype markdown,md map <buffer> <C-P> :call system('xfce4-terminal --geometry=80x20 -H -x lynx /tmp/vim-markdown-preview.html &> /dev/null &')<CR>
+

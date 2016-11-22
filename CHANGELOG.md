@@ -1,6 +1,13 @@
 CHANGELOG FILE
 ==============
 
+22nd Nov 2016
+-------------
+- Added (de)comment for python files
+- Markdown support. Now vim detects .md files and
+  :w    saves the .md and generates a temporary html file (needs markdown and needs to be run twice)
+  <C-P> opens a xfce-terminal with lynx with the temporary html file
+
 11th Jul 2016
 -------------
 - Added gnuplot syntax highlighting (valid for .gp extension)
